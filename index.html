@@ -1,5 +1,4 @@
 <style>
-
 /* --------------------------------------------------------- */
 /* GLOBAL PAGE SETTINGS                                      */
 /* --------------------------------------------------------- */
@@ -10,6 +9,7 @@ body {
     margin: 0;
     color: #1f2e1f;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* --------------------------------------------------------- */
@@ -45,9 +45,10 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;       /* ★ Wider content width */
+    max-width: 1200px;       /* ★ Medium width */
     margin: 40px auto;
-    padding: 20px;
+    padding: 20px 40px;
+    box-sizing: border-box;
 }
 
 /* Page Header */
@@ -79,22 +80,23 @@ h1 {
 }
 
 /* --------------------------------------------------------- */
-/* FAQ Rows — UPDATED / UPGRADED                             */
+/* FAQ ROWS — UPGRADED                                       */
 /* --------------------------------------------------------- */
 
 .faq-row {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 25px;
-    background: #f9fcf9;
-    border-radius: 10px;        /* ★ Rounded corners */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);  /* ★ Soft card shadow */
-    padding: 18px 22px;
+    margin: 0 auto 25px auto;
+    background: #f9fcf9;            /* light greenish-white */
+    border-radius: 10px;             /* rounded corners */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);  /* soft shadow */
+    padding: 20px 24px;
+    box-sizing: border-box;
     transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .faq-row:nth-child(even) {
-    background: #f3f7f3;        /* ★ Subtle alternating tone */
+    background: #f3f7f3;            /* subtle alternate color */
 }
 
 .faq-row:hover {
@@ -117,4 +119,28 @@ h1 {
     line-height: 1.55;
 }
 
+/* --------------------------------------------------------- */
+/* MOBILE RESPONSIVE                                         */
+/* --------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+    .container {
+        padding: 10px 15px;
+        margin: 20px auto;
+    }
+
+    .faq-row {
+        padding: 15px 18px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+}
 </style>
