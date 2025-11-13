@@ -1,231 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Headwater FAQ</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #ffffff;
-        margin: 0;
-        color: #1f2e1f;
-        line-height: 1.6;
-    }
 
-    /* Sticky Menu */
-    .top-menu {
-        position: sticky;
-        top: 0;
-        background: #0c2a18;
-        padding: 10px 0;
-        z-index: 1000;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .top-menu a {
-        color: #ffffff;
-        margin: 0 15px;
-        font-size: 14px;
-        text-decoration: none;
-        font-weight: bold;
-        letter-spacing: 0.5px;
-    }
-    .top-menu a:hover {
-        opacity: 0.7;
-    }
-
-    /* Page Container */
-   .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px 40px;
-    box-sizing: border-box;
+/* --------------------------
+   GLOBAL PAGE STYLING
+--------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    margin: 0;
+    color: #1f2e1f;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
+/* --------------------------
+   TOP NAV MENU (Green Bar)
+--------------------------- */
+.top-menu {
+    position: sticky;
+    top: 0;
+    background: #0c2a18;
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
 
-    /* Page Header */
-    h1 {
-        text-align: center;
-        margin-bottom: 5px;
-        font-size: 32px;
-        letter-spacing: 0.5px;
-        color: #0c2a18;
+.top-menu a {
+    color: #ffffff;
+    margin: 0 15px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.top-menu a:hover {
+    opacity: 0.7;
+}
+
+/* --------------------------
+   PAGE CONTAINER
+   (THIS CONTROLS THE WIDTH)
+--------------------------- */
+.container {
+    width: 100%;
+    max-width: 1200px;    /* ← Increased from 900px */
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* --------------------------
+   PAGE TITLES
+--------------------------- */
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    color: #0c2a18;
+}
+
+.subhead {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* SECTION TITLES (Benefits, Usage, Ingredients, etc.) */
+.section-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 50px 0 30px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #0c2a18;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --------------------------
+   FAQ ROWS (THE MAIN FIX)
+--------------------------- */
+.faq-row {
+    width: 100%;               /* Full available width */
+    max-width: 1000px;         /* Increased from 600–900 */
+    margin: 0 auto 20px auto;  /* Center & space below */
+    background: #f5f5f5;
+    border-radius: 6px;
+    padding: 20px;
+    box-sizing: border-box;    /* Prevents padding from shrinking width */
+}
+
+/* Question formatting */
+.question {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0c2a18;
+}
+
+/* Answer formatting */
+.answer {
+    color: #333;
+}
+
+/* --------------------------
+   MOBILE RESPONSIVE
+--------------------------- */
+@media only screen and (max-width: 768px) {
+
+    .container {
+        padding: 10px;
+        margin: 20px auto;
     }
 
-    .subhead {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 14px;
-        color: #6a7c6a;
-    }
-
-    /* Section Headers */
-    .section-title {
-        text-align: center;
-        font-size: 26px;
-        margin-top: 50px;
-        margin-bottom: 25px;
-        color: #0c2a18;
-        font-weight: bold;
-    }
-
-    /* FAQ Rows */
     .faq-row {
-        padding: 25px 0;
-        border-bottom: 1px solid #e2e8e2;
+        max-width: 95%;
+        padding: 15px;
     }
 
-    /* Subtle alternating background */
-    .faq-row:nth-child(even) {
-        background: #F7F9F8;
+    h1 {
+        font-size: 26px;
     }
 
-    .question {
-        font-weight: bold;
+    .section-title {
         font-size: 18px;
-        margin-bottom: 6px;
     }
+}
 
-    .answer {
-        font-size: 15px;
-        color: #333;
-        max-width: 800px;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
 </style>
-</head>
-
-<body>
-
-<!-- Sticky Navigation -->
-<div class="top-menu">
-    <a href="#benefits">Benefits</a>
-    <a href="#usage">Usage</a>
-    <a href="#ingredients">Ingredients</a>
-    <a href="#performance">Performance</a>
-    <a href="#general">General</a>
-</div>
-
-<!-- Main Container -->
-<div class="container">
-
-    <h1>Headwater FAQ</h1>
-    <div class="subhead">
-        Everything you want to know — flavor, function, and how Headwater supports daily performance.
-    </div>
-
-    <!-- ================= BENEFITS ================= -->
-    <div id="benefits" class="section-title">Benefits</div>
-
-    <!-- FAQ Rows -->
-    <div class="faq-row">
-        <div class="question">What is Headwater?</div>
-        <div class="answer">Headwater is a lightly sparkling beverage formulated with Lion’s Mane and Chaga mushroom extracts to support cognitive function and overall physiological resilience.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">Why mushrooms?</div>
-        <div class="answer">Lion’s Mane and Chaga contain natural compounds studied for supporting brain communication, cellular protection, and immune balance.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">How does it work?</div>
-        <div class="answer">Headwater delivers concentrated Lion’s Mane and Chaga extracts that support key biological systems involved in thinking, stress adaptation, and cellular health.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">How soon will I notice benefits?</div>
-        <div class="answer">Many people notice a calm, clearer sense of focus early on. More significant benefits build gradually over one to three weeks of consistent use.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">What will I feel?</div>
-        <div class="answer">Most people report calm focus, clear thinking, and steady mental energy without jitters or a crash.</div>
-    </div>
-
-    <!-- ================= USAGE ================= -->
-    <div id="usage" class="section-title">Usage</div>
-
-    <div class="faq-row">
-        <div class="question">Is this an energy drink?</div>
-        <div class="answer">No. Headwater contains no caffeine and no synthetic stimulants.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">How is this different from coffee or energy drinks?</div>
-        <div class="answer">Coffee and energy drinks create short-term stimulation. Headwater supports steady focus and resilience.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">How is this different from nootropic supplements or powders?</div>
-        <div class="answer">Most nootropics rely on isolated compounds or stimulants. Headwater uses whole-mushroom extracts for nutritional support.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">When should I drink it?</div>
-        <div class="answer">Anytime you want clean mental energy — mornings, at work, before training, or during long days.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">Do I need to cycle it?</div>
-        <div class="answer">No cycling is necessary. Headwater does not build tolerance.</div>
-    </div>
-
-    <!-- ================= INGREDIENTS ================= -->
-    <div id="ingredients" class="section-title">Ingredients</div>
-
-    <div class="faq-row">
-        <div class="question">Do you use real mushroom extracts?</div>
-        <div class="answer">Yes — certified organic fruiting-body extracts, not mycelium on grain.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">Where is it made?</div>
-        <div class="answer">Produced in the United States with certified organic mushroom extracts.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">Does it contain sugar or sweeteners?</div>
-        <div class="answer">No added sugar and no artificial sweeteners.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">Is it carbonated?</div>
-        <div class="answer">Yes — lightly effervescent for refreshing daily drinking.</div>
-    </div>
-
-    <!-- ================= PERFORMANCE ================= -->
-    <div id="performance" class="section-title">Performance</div>
-
-    <div class="faq-row">
-        <div class="question">Is it suitable for professional athletes?</div>
-        <div class="answer">Yes. Headwater contains no banned stimulants and supports neural recovery and resilience.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">Can this replace coffee?</div>
-        <div class="answer">Some people do replace coffee with Headwater, especially for smoother, jitter-free focus.</div>
-    </div>
-
-    <!-- ================= GENERAL ================= -->
-    <div id="general" class="section-title">General Questions</div>
-
-    <div class="faq-row">
-        <div class="question">How long does the effect last?</div>
-        <div class="answer">Typically several hours, depending on the person.</div>
-    </div>
-
-    <div class="faq-row">
-        <div class="question">How should I store it?</div>
-        <div class="answer">Shelf-stable. Best served cold.</div>
-    </div>
-
-</div>
-
-</body>
-</html>
